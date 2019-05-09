@@ -6,11 +6,35 @@
     <title></title>
     <script src="js/mui.min.js"></script>
     <link href="css/mui.min.css" rel="stylesheet"/>
-    <script type="text/javascript" charset="utf-8">
-      	mui.init();
-    </script>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <style type="text/css">
+    	/* body{
+    		background:rgba(102,102,102,1);
+    	} */
+    </style>
 </head>
 <body>
-	
+	<div class="mui-content">
+		<div id="timer"></div>
+        <div id="warring"></div>
+	</div>
+    <script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        var maxtime = 10 * 60; 
+             function CountDown() {
+               if (maxtime >= 0) {
+                 minutes = Math.floor(maxtime / 60);
+                 seconds = Math.floor(maxtime % 60);
+                 msg = minutes + "分" + seconds + "秒";
+                 document.all["timer"].innerHTML = msg;
+                 if (maxtime == 5 * 60)alert("距离结束仅剩5分钟");
+                   --maxtime;
+               } else{
+                 clearInterval(timer);
+                 alert("时间到，结束!");
+               }
+             }
+             timer = setInterval("CountDown()", 1000);  
+        </script>
 </body>
 </html>
