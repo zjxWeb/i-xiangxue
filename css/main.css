@@ -1,2 +1,6 @@
 /*global style*/
 *{margin: 0; padding: 0; list-style: none;}
+#timer{ margin-left:25vw; font-size: 9em; color:black;}
+.time_style{
+    margin-top: 40vh;
+}
